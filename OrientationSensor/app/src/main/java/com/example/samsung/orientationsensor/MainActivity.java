@@ -63,7 +63,11 @@ public class MainActivity extends Activity {
         pz = (TextView)findViewById(R.id.press_z);
         pAltitude = (TextView)findViewById(R.id.acc_altitude);
         //mTextFileManager.save("짱이당");
-        checkPermission();
+
+        Log.i("버전 정보 : ", String.valueOf(Build.VERSION.SDK_INT));
+        if(Build.VERSION.SDK_INT >= 23) {
+            checkPermission();
+        }
     }
 
     private void checkPermission() {
